@@ -1,7 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ .Values.appName }}-service
+  name: {{ .Values.appName }}-app
+  labels:
+    app: {{ .Values.appName }}-app
 spec:
   internalTrafficPolicy: Cluster
   ipFamilies:
@@ -12,7 +14,7 @@ spec:
     protocol: TCP
     targetPort: {{ .Values.ports.targetPort }}
   selector:
-    app: {{ .Values.appName }}-deploy
+    app: {{ .Values.appName }}-app
   sessionAffinity: None
   type: ClusterIP
 
