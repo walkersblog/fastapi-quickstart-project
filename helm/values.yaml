@@ -1,9 +1,10 @@
 imagePullSecrets:
   - name: ocpregcred
+
 imageCredentials:
   registry: image-registry.openshift-image-registry.svc:5000
   username: developer
-  password: sha256~jOnK5NAToGPLqM_uJw8cPcNBzKyPyWL5TNuSOUIjVps
+  password: sha256~am8omh-0SBvn0PuAddMR-j-oqtQT6tjws3RXzg060SQ
 
 appName: fastapi-quickstart
 
