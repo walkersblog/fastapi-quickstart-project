@@ -13,6 +13,7 @@ spec:
   - port: {{ .Values.ports.port }}
     protocol: TCP
     targetPort: {{ .Values.ports.targetPort }}
+    name: web
   selector:
     app: {{ .Values.appName }}-app
   sessionAffinity: None
