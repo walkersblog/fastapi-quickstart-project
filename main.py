@@ -6,9 +6,11 @@ from views import home
 
 from starlette.staticfiles import StaticFiles
 from environs import Env
+from prometheus_fastapi_instrumentator import Instrumentator
 
 main_app = fastapi.FastAPI()
 
+Instrumentator().instrument(main_app).expose(main_app)
 
 def configure():
     configure_routing()
