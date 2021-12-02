@@ -1,0 +1,11 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: hits-alert
+  namespace: ocp-fastapi-quickstart-project
+spec:
+  groups:
+  - name: example
+    rules:
+    - alert: HitCounterAlert
+      expr: custom_page_counter_total > 20

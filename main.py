@@ -1,7 +1,7 @@
 import fastapi
 import uvicorn
 
-from api import motd
+from api import motd, script_wrapper
 from views import home
 
 from starlette.staticfiles import StaticFiles
@@ -31,6 +31,7 @@ def configure_routing():
     main_app.mount('/static', StaticFiles(directory='static'), name='static')
     main_app.include_router(motd.router)
     main_app.include_router(home.router)
+    main_app.include_router(script_wrapper.router)
 
 
 if __name__ == '__main__':
